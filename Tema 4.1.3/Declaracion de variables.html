@@ -1,0 +1,25 @@
+<!doctype html>
+<head>
+    <title>Declaración de variables</title>
+</head>
+<body>
+    <?php
+    $var = 'Roberto';
+    $Var = 'Juan';
+    echo "$var, $Var"; // imprime "Roberto, Juan"
+    $4site = 'aun no'; // inválido; comienza con un número
+    $_4site = 'aun no'; // válido; comienza con un carácter de subrayado
+    $täyte = 'mansikka'; // válido; 'ä' es ASCII (Extendido) 228
+    ?>
+
+    <?php
+    $foo = 'Nico'; // Asigna el valor 'Bob' a $foo
+    $bar = &$foo; // Referenciar $foo vía $bar.
+    $bar = "Mi nombre es $bar"; // Modifica $bar...
+    echo $bar;
+    echo $foo; // $foo también se modifica.
+    ?>
+
+
+</body>
+</html>

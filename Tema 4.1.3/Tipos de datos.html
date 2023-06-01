@@ -1,0 +1,82 @@
+<!doctype html>
+<head>
+    <title>Tipos de datos</title>
+</head>
+<body>
+    <?php
+    $a = 1234; // número decimal
+    $b = -123; // un número negativo
+    $c = 0123; // número octal (equivale a 83 decimal)
+    $d = 0x1A; // número hexadecimal (equivale a 26 decimal)
+    $e = 0b11111111; // número binario (equivale al 255 decimal) 
+    ?>
+
+
+    //////Datos flotantes////////
+    <?php
+    $a = 1.234;
+    $b = 1.2e3;
+    $c = 7E-10;
+    $d = 1_234.567; // a partir de PHP 7.4.0
+    ?>
+
+    //////Datos string/////////
+    <?php
+    echo 'Esto es una cadena sencilla';
+    echo 'También se pueden incluir nuevas 
+    líneas en un string de esta forma, 
+    ya que es correcto hacerlo así';
+
+    // Resultado: Arnold una vez dijo: "I'll be back"
+    echo 'Arnold una vez dijo: "I\'ll be back"';
+    // Resultado: Ha borrado C:\*.*?
+    echo 'Ha borrado C:\\*.*?';
+    // Resultado: Ha borrado C:\*.*?
+    echo 'Ha borrado C:\*.*?';
+    // Resultado: Esto no se expandirá: \n una nueva línea
+    echo 'Esto no se expandirá: \n una nueva línea';
+    // Resultado: Las variables $tampoco se $expandirán
+    echo 'Las variables $tampoco se $expandirán';
+    ?>
+
+    //////Sintaxis simple/////////
+    <?php
+    $jugo = "manzana";
+    echo "Él tomó algo de jugo de $jugo.".PHP_EOL;
+    // Inválido. "s" es un carácter válido para un nombre de variable, pero l
+    a variable es $jugo.
+    echo "Él tomó algo de jugo hecho de $jugos.";
+    // Válido. Explícitamente especifica el final del nombre de la variable e
+    ncerrándolo entre llaves:
+    echo "Él tomó algo de jugo hecho de ${jugo}s."
+?>
+     
+    //////Sintaxis compleja/////////
+    <?php
+    // Mostrar todos los errores
+    error_reporting(E_ALL);
+    $genial = 'fantástico';
+    // No funciona, muestra: Esto es { fantástico}
+    echo "Esto es { $genial}";
+    // Funciona, muestra: Esto es fantástico
+    echo "Esto es {$genial}";
+    ?>
+
+    //////Acceso a string y modificacion de caracteres/////////
+    <?php
+    // Obtener el primer carácter de un string
+    $str = 'Esto es una prueba.';
+    $primero = $str[0];
+    // Obtener el tercer carácter de un string
+    $tercero = $str[2];
+    ?>
+
+    ///////////Conversion de string a numeros////////////////
+    <?php
+    $foo = 1 + "10.5"; // $foo es float (11.5)
+    $foo = 1 + "-1.3e3"; // $foo es float (-1299)
+    ?>
+
+
+</body>
+</html>

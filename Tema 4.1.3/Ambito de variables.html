@@ -1,0 +1,34 @@
+<!doctype html>
+<head>
+    <title>Ámbito de variables</title>
+</head>
+<body>
+    <?php
+    $a = 1;
+    include 'b.inc';
+    ?>
+
+    <?php
+    $a = 1; /* ámbito global */
+    function test()
+    {
+    echo $a; /* referencia a una variable del ámbito local */
+    }
+    test();
+    ?>
+
+    <?php
+    $a = 1;
+    $b = 2;
+    function Suma()
+    {
+    global $a, $b;
+    $b = $a + $b;
+    }
+    Suma();
+    echo $b;
+    ?>
+
+
+</body>
+</html>

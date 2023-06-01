@@ -1,0 +1,19 @@
+<!doctype html>
+<head>
+    <title>Salir de html</title>
+</head>
+<body>
+<p>Esto va a ser ignorado por PHP y mostrado por el navegador.</p>
+
+<?php echo 'Mientras que esto va a ser interpretado.'; ?>
+
+<p>Esto también será ignorado por PHP y mostrado por el navegador.</p>
+
+<?php if ($expresion == 10): ?>
+ <p>Esto se mostrará si la expresión es verdadera.</p>
+<?php else: ?>
+ <p>En caso contrario se mostrará esto.</p>
+<?php endif; ?>
+
+</body>
+</html>
